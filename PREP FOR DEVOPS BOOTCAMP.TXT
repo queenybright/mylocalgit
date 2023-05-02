@@ -1,0 +1,106 @@
+I - HOW TO SETUP YOUR HOME OFFICE
+
+02 Monitors That support HDMI Connections
+02 HDMI cables
+01 Docking Station
+01 Laptop (Windows or Mac)
+01 KeyBoard
+01 Mouse
+01 Desk
+01 Office Chair
+01 Note Book
+01 Pen
+
+II - CREATE A FOLDER IN YOUR HOME DIRECTORY
+C:\Users\yourname\DevOps
+
+III - INSTALL IDEs
+
+1. Install Sublime Text
+
+2. Install Visual Studio Code
+
+3. Install Eclipse
+
+IV - INSTALL TOOLS TO SSH
+
+1. Install Mobaxterm
+
+2. Install Putty
+
+V - INSTALL GIT AND CREATE AN ACCOUNT IN GITHUB
+
+1. Create a GitHub Account
+
+2. Install Git Bash or git desktop
+
+3. Configure git locally
+git config --global user.name "name"
+git config --global user.email "email"
+git config --global color.ui auto
+git config --list
+
+4. Create ssh key
+ssh-keygen -t rsa -b 4096
+
+5. Attach the Key to your Github Account
+Account settings > SSH and GPG keys > Add new
+
+VI - INSTALL TERRAFORM
+
+1. Install choclatey
+https://chocolatey.org/install
+- open powershell as Administrator
+- run the command:
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+- check if it is install
+choco -?
+
+2. Install terraform
+choco install terraform
+terraform -help
+terraform -help plan
+
+VII - PREREQUISITES FORM AWS
+
+1. Sign Up for a New AWS Account (Root Account)
+2. Sign Up for a New AWS Authentication (MFA) for Root Account
+/**
+* AWS is a paid service
+* You want to ensure it is the appropriete user
+* accessing your AWS account
+**/
+3. Create a Strong Password Policy
+4. Create an IAM User, Group, and Assign Policy
+/**
+* You should not use the root user
+* for your daily activities in AWS
+* Create a user with administrative access
+**/
+5. Setup Multi Factor Authentication (MFA) for IAM User
+6. Creating an AWS Account Alias
+/**
+* Is often not convenient to remember your AWS Account ID
+* Creating an Alias that you can remember
+* will make your login experience more enjoyable
+*
+**/
+7. Create a Trail in CloudTrail
+/**
+* CloudTrail is the AWS service that allows to monitor
+* what the users in your AWS Account are doing
+* To investigate events that last more than 90 days 
+* you have to create a Trail
+*
+**/
+
+8. Create a CloudWatch Billing Alarm
+/**
+* Create CloudWatch Billing Alarm to monitor our AWS billing Charges
+* This allow you to monitor the charges in your AWS account
+* To make sure that you don't over spend.
+* Only the root has access to billing information
+* So you need to login as root user
+**/
+
+
